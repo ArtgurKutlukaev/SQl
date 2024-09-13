@@ -27,3 +27,8 @@ jobs:
         # Для проектов на базе Selenide необходимо добавить параметр для запуска браузера
         # в headless режиме -Dselenide.headless=true, параметр --info должен остаться
         run: ./gradlew test --info -Dselenide.headless=true
+
+      - name: Container start
+        uses: hoverkraft-tech/compose-action@v2.0.1
+      - name: Waiting for сontainer start
+        run: sleep 30
