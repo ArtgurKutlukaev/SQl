@@ -9,20 +9,19 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class SQLHelper {
-    private static QueryRunner QUERY_RUNNER = new QueryRunner();
+    private static final QueryRunner QUERY_RUNNER = new QueryRunner();
 
     private SQLHelper() {
     }
 
     private static Connection getConn() throws SQLException {
-        return DriverManager.getConnection(System.getProperty("db.url"), "app", "pass");
+        return DriverManager.getConnection(System.getProperty("db.url"),"app", "pass");
     }
 
     @SneakyThrows
     public static String getVerificationCode(){
         var codeSQL = "SELECT code FROM auth_codes ORDER BY created DESC LIMIT 1";
         var conn = getConn();
-
         return QUERY_RUNNER.query(conn,codeSQL,new ScalarHandler<>());
     }
 

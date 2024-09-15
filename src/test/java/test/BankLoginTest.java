@@ -15,7 +15,6 @@ public class BankLoginTest {
     @AfterEach
      void tearDown(){
         cleanAuthCodes();
-
     }
 
     @AfterAll
@@ -24,7 +23,7 @@ public class BankLoginTest {
     }
 
     @BeforeEach
-    void setUp() { loginPage = open("http://localhost:9999", LoginPage.class);}
+   void setUp() { loginPage = open("http://localhost:9999", LoginPage.class);}
 
     @Test
     @DisplayName("Should successfully login to dashboard with exist login and password from sut test data")
