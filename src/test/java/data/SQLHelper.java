@@ -31,7 +31,7 @@ public class SQLHelper {
         QUERY_RUNNER.execute(connection, "DELETE FROM auth_codes");
         QUERY_RUNNER.execute(connection, "DELETE FROM card_transactions");
         QUERY_RUNNER.execute(connection, "DELETE FROM cards");
-        QUERY_RUNNER.execute(connection,"DELETE FROM user");
+        QUERY_RUNNER.execute(connection,"DELETE FROM users");
     }
     @SneakyThrows
     public static void cleanAuthCodes(){

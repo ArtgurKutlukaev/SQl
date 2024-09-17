@@ -13,7 +13,7 @@ public class LoginPage {
     private static final SelenideElement passwordField = $("[data-test-id=password] input");
 
     private static final SelenideElement loginButton = $("[data-test-id=action-login]");
-    private final SelenideElement errorNotification = $("[data-test-id='error-notification']");
+    private final SelenideElement errorNotification = $("[data-test-id='error-notification'] .notification__content");
 
     public void verifyErrorNotification(String expectedText) {
         errorNotification.shouldHave(exactText(expectedText)).shouldBe(visible);
@@ -25,4 +25,6 @@ public class LoginPage {
         loginButton.click();
         return new VerificationPage();
     }
-    }
+
+
+}

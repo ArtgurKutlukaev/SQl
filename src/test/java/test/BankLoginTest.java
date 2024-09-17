@@ -1,13 +1,14 @@
 package test;
 
+import org.junit.jupiter.api.*;
 import data.DataHelper;
 import data.SQLHelper;
-import org.junit.jupiter.api.*;
 import page.LoginPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static data.SQLHelper.cleanAuthCodes;
 import static data.SQLHelper.cleanDatabase;
+
 
 public class BankLoginTest {
     LoginPage loginPage;
@@ -55,7 +56,7 @@ public class BankLoginTest {
         verificationPage.verifyVerificationPageVisiblity();
         var verificationCode = DataHelper.generateRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка!  \nНеверно указан код! Попробуйте еще раз.");
+        verificationPage.verifyErrorNotification("Ошибка! \nНеверно указан код! Попробуйте еще раз.");
 
 
     }
